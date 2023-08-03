@@ -643,5 +643,3 @@ public class Assignment4InsuranceQuotesTest
     }
 
 }
-
-
