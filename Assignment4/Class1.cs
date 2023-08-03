@@ -149,6 +149,7 @@ public class Assignment4InsuranceQuotesTest
         driver.FindElement(By.Id("btnSubmit")).Click();
         driver.FindElement(By.Id("finalQuote")).Click();
 
+
         // Assert
         {
             string value = driver.FindElement(By.Id("firstName")).GetAttribute("value");
