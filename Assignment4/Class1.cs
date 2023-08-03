@@ -33,7 +33,7 @@ public class Assignment4InsuranceQuotesTest
     string baseURL = "http://localhost/prog8170a04/index.html";
 
     [Test]
-    public void insuranceQuote01_25and3and0_FinalQuote4500()
+    public void InsuranceQuote01_AllValidDataWithAge25andExperience0andAccidents0_FinalQuote4500()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -76,7 +76,7 @@ public class Assignment4InsuranceQuotesTest
         }
     }
     [Test]
-    public void insuranceQuote02_25and3and2_FinalQuote4500()
+    public void InsuranceQuote02_AllValidDataWithAge25andExperience3andAccidents2_FinalQuote4500()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -119,7 +119,7 @@ public class Assignment4InsuranceQuotesTest
         }
     }
     [Test]
-    public void insuranceQuote03_35and10and4_FinalQuoteTooManyAccidents()
+    public void InsuranceQuote03_AllValidDataWithAge35andExperience10andAccidents4_NoInsuranceForYou()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -149,7 +149,6 @@ public class Assignment4InsuranceQuotesTest
         driver.FindElement(By.Id("btnSubmit")).Click();
         driver.FindElement(By.Id("finalQuote")).Click();
 
-
         // Assert
         {
             string value = driver.FindElement(By.Id("firstName")).GetAttribute("value");
@@ -164,9 +163,8 @@ public class Assignment4InsuranceQuotesTest
             Assert.That(value, Is.EqualTo("No Insurance for you!!  Too many accidents - go take a course!"));
         }
     }
-
     [Test]
-    public void insuranceQuote04_1111231234_InvalidPhoneNumber()
+    public void InsuranceQuote04_AllValidDataWithPhoneNumber1111231234_InvalidPhoneNumber()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -208,7 +206,7 @@ public class Assignment4InsuranceQuotesTest
         Assert.That(driver.FindElement(By.Id("phone-error")).Text, Is.EqualTo("Phone Number must follow the patterns 111-111-1111 or (111)111-1111"));
     }
     [Test]
-    public void insuranceQuote05_jigargangani_InvalidEmailAddress()
+    public void InsuranceQuote05_AllValidDataWithEmailjigargangani_InvalidEmailAddress()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -252,7 +250,7 @@ public class Assignment4InsuranceQuotesTest
         Assert.That(driver.FindElement(By.Id("email-error")).Text, Is.EqualTo("Must be a valid email address"));
     }
     [Test]
-    public void insuranceQuote06_N2H0C9_InvalidPostalCode()
+    public void InsuranceQuote06_AllValidDataWithPostalCodeN2H0C9_InvalidPostalCode()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -283,9 +281,8 @@ public class Assignment4InsuranceQuotesTest
         // Assert
         Assert.That(driver.FindElement(By.Id("postalCode-error")).Text, Is.EqualTo("Postal Code must follow the pattern A1A 1A1"));
     }
-
     [Test]
-    public void insuranceQuote07_AgeOmitted_AgeGreaterThanOrEqualSixteenRequired()
+    public void InsuranceQuote07_AllValidDataWithAgeOmitted_AgeGreaterThanOrEqualSixteenRequired()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -331,7 +328,7 @@ public class Assignment4InsuranceQuotesTest
         }
     }
     [Test]
-    public void insuranceQuote08_AccidentOmitted_NumberOfAccidentIsRequired()
+    public void InsuranceQuote08_AllValidDataWithAccidentOmitted_NumberOfAccidentIsRequired()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -377,7 +374,7 @@ public class Assignment4InsuranceQuotesTest
         }
     }
     [Test]
-    public void insuranceQuote09_ExperienceOmitted_YearsOfExperienceIsRequired()
+    public void InsuranceQuote09_AllValidDataWithExperienceOmitted_YearsOfExperienceIsRequired()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -413,9 +410,8 @@ public class Assignment4InsuranceQuotesTest
             Assert.That(value, Is.EqualTo(""));
         }
     }
-
     [Test]
-    public void insuranceQuote10_16and2and0_LimitedExperience()
+    public void InsuranceQuote10_AllValidDataWithAge16andExperience2andAccidents0_NoInsuranceForYouExperienceNotCorrect()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -451,7 +447,7 @@ public class Assignment4InsuranceQuotesTest
         }
     }
     [Test]
-    public void insuranceQuote11_25and10and5_ExperienceNotCorrect()
+    public void InsuranceQuote11_AllValidDataWithAge25andExperience10andAccidents5_NoInsuranceForYouExperienceNotCorrect()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -487,7 +483,7 @@ public class Assignment4InsuranceQuotesTest
         }
     }
     [Test]
-    public void insuranceQuote12_50and16and1_FinalQuote2190()
+    public void InsuranceQuote12_AllValidDataWith50andExperience16andAccidents1_FinalQuote2190()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -523,7 +519,7 @@ public class Assignment4InsuranceQuotesTest
         }
     }
     [Test]
-    public void insuranceQuote13_InsertInvalidAge_EnterValueGreaterThanOrEqual16()
+    public void InsuranceQuote13_AllValidDataWithAge15andExperience0andAccidents0_EnterValueGreaterThanOrEqual16()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -566,7 +562,7 @@ public class Assignment4InsuranceQuotesTest
         Assert.That(driver.FindElement(By.Id("age-error")).Text, Is.EqualTo("Please enter a value greater than or equal to 16."));
     }
     [Test]
-    public void insuranceQuote14_TooManyAccidentsValue_NoInsuranceForYou()
+    public void InsuranceQuote14_AllValidDataWithAge42andExperience18andAccidents15_NoInsuranceForYouTooManyAccidentsValue()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -601,7 +597,7 @@ public class Assignment4InsuranceQuotesTest
         }
     }
     [Test]
-    public void insuranceQuote15_InsertNegativeExperience_EnterValueGreaterThanOrEqualZero()
+    public void InsuranceQuote15_AllValidDataWithAge24andExperience4andAccidents3_EnterValueGreaterThanOrEqualZero()
     {
         // Arrange
         driver.Navigate().GoToUrl(baseURL);
@@ -642,5 +638,4 @@ public class Assignment4InsuranceQuotesTest
         }
         Assert.That(driver.FindElement(By.Id("experience-error")).Text, Is.EqualTo("Please enter a value greater than or equal to 0."));
     }
-
 }
